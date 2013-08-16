@@ -23,7 +23,7 @@ public class Gui extends Frame
     ImgPanel p;
     public Gui() {
         super("ImageViewer V. 1.0");
-        setBackground(Color.BLUE); /* TODO Affects everything and the image is not loaded correctly. */
+        setBackground(Color.BLUE);
         this.create();
         addWindowListener( new WindowAdapter() {
         	@Override
@@ -99,8 +99,7 @@ public class Gui extends Frame
         m.add(sub);
         Menu edit = new Menu("Edit");
         MenuItem e = new MenuItem("Edit color");
-        e.addActionListener( new ActionListener() { //TODO
-        	//The rendered image must be added to jtabbedpane!!!
+        e.addActionListener( new ActionListener() {
                                                 public void actionPerformed(ActionEvent e) {
                                                         p.addConst2();
                                                 }
