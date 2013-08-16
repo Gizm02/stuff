@@ -62,35 +62,35 @@ public class Gui extends Frame
         // void show()                starts the dialog
         MenuItem open = new MenuItem("Open");
         open.addActionListener(new ActionListener() {
-                                                    @SuppressWarnings("deprecation")
-													public void actionPerformed(ActionEvent e) {
-                                                    	File f = new File("");
-                                                    	 // Open a dialog which provides the files
-                                                        jfc = new JFileChooser();
-                                                        FileNameExtensionFilter filter = new FileNameExtensionFilter("Choose a *.jpg file", "JPG");
-                                                        jfc.setFileFilter(filter);
-                                                        jfc.setVisible(true);
-                                                        // If a file is chosen:
-                                                        if(jfc.showOpenDialog(null) == jfc.APPROVE_OPTION)
-                                                            f = jfc.getSelectedFile();
-                                                        p = new ImgPanel(f); /* Initialisiere ImgPanel p */
-                                                        tp.addTab(f.toString(), p);
-                                                        resize(tp.getWidth(),tp.getHeight());
-                                                    }});
+                @SuppressWarnings("deprecation")
+				public void actionPerformed(ActionEvent e) {
+                   	File f = new File("");
+                   	 // Open a dialog which provides the files
+                    jfc = new JFileChooser();
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter("Choose a *.jpg file", "JPG");
+                    jfc.setFileFilter(filter);
+                    jfc.setVisible(true);
+                    // If a file is chosen:
+                    if(jfc.showOpenDialog(null) == jfc.APPROVE_OPTION)
+                    	f = jfc.getSelectedFile();
+                    p = new ImgPanel(f); /* Initialisiere ImgPanel p */
+                    tp.addTab(f.toString(), p);
+                    resize(tp.getWidth(),tp.getHeight());
+                    }});
         MenuItem store = new MenuItem("Store");
         store.addActionListener(new ActionListener() {
-        											public void actionPerformed(ActionEvent e) {
-        												File f = new File("");
-        												 // Open a dialog which provides the files
-        										        jfc = new JFileChooser();
-        										        FileNameExtensionFilter filter = new FileNameExtensionFilter("Choose a *.txt file", "jpg");
-        										        jfc.setFileFilter(filter);
-        										        jfc.setVisible(true);
-        										        // If a file is chosen:
-        										        if(jfc.showOpenDialog(null) == jfc.APPROVE_OPTION)
-        										            f = jfc.getSelectedFile();
-        												p.store(f.toString());
-        											} } );
+        		public void actionPerformed(ActionEvent e) {
+        			File f = new File("");
+        			// Open a dialog which provides the files
+        			jfc = new JFileChooser();
+        			FileNameExtensionFilter filter = new FileNameExtensionFilter("Choose a *.txt file", "jpg");
+        			jfc.setFileFilter(filter);
+        			jfc.setVisible(true);
+        			// If a file is chosen:
+        			if(jfc.showOpenDialog(null) == jfc.APPROVE_OPTION)
+        				f = jfc.getSelectedFile();
+        			p.store(f.toString());
+       	} } );
         add(tp);
         // Add the menu items to the menu bar
         sub.add(store);
