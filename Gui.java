@@ -13,7 +13,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  * 
  * 
- * @author Ben
+ * @author Gizm02
  * @version 18.09.2012
  */
 public class Gui extends Frame
