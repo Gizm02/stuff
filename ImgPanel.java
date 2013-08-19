@@ -70,7 +70,7 @@ public class ImgPanel extends JPanel
     /**Rotate image. */
     public void rotate() {
     	int angle = 45;
-    	float sigma=(float)(Math.PI/(float)360)*angle;
+    	float sigma=(float)(Math.PI/(float)180)*angle;
     	Interpolation interpol = Interpolation.getInstance(Interpolation.INTERP_NEAREST);
     	ParameterBlock pb = new ParameterBlock();
     	pb.addSource(this.img); //source image
