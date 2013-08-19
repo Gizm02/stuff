@@ -36,7 +36,7 @@ public class ImgPanel extends JPanel
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
     	if(this.img!=null) {
-    		g.drawImage(this.img,0,0,this);
+    		g.drawImage(this.img,0,0,this.getWidth(),this.getHeight(),this);
     	}
     }
     /**Load image.
@@ -68,8 +68,9 @@ public class ImgPanel extends JPanel
         repaint();
     }
     /**Rotate image. */
-    public void rotate() { 
-    	float sigma=1/8.f; //45 degree
+    public void rotate() {
+    	int angle = 45;
+    	float sigma=(float)(Math.PI/(float)360)*angle;
     	Interpolation interpol = Interpolation.getInstance(Interpolation.INTERP_NEAREST);
     	ParameterBlock pb = new ParameterBlock();
     	pb.addSource(this.img); //source image
